@@ -1,0 +1,257 @@
+CSE 12 Program 4
+Rubaiat Tazim
+A12739293
+5/17/2018
+
+Part 1 (random-strings.txt)
+
+I. Bubble
+
+A. Test parameters: java SortTimer random-strings.txt 0 500 500 10 1
+It sorts the first 500 strings, extends each test by 500, does 10
+tests, and 1 rep/iteration. I chose this because it would start at
+500 strings, sort it once, increment it to 1000, sort it once again, 
+then repeat until it reached 5000 (after 10 tests). This was a good
+amount of data to plot the points (time vs. input) and find a pattern.
+
+B.
+  1:     500 words in      25 milliseconds
+  2:    1000 words in      11 milliseconds
+  3:    1500 words in      45 milliseconds
+  4:    2000 words in      42 milliseconds
+  5:    2500 words in      48 milliseconds
+  6:    3000 words in      94 milliseconds
+  7:    3500 words in     117 milliseconds
+  8:    4000 words in     153 milliseconds
+  9:    4500 words in     213 milliseconds
+ 10:    5000 words in     257 milliseconds
+
+C. Complexity: O(n^2)
+   I used the input size and time to determine how fast the function
+   grows when I graph it.
+
+II. Insertion
+
+A. Test parameters: java SortTimer random-strings.txt 1 10000 10000 10 5
+It sorts the first 10000 strings, extends each test by 10000, does 10
+tests, and 5 reps/iteration. I chose this because it would start at
+10000 strings, sort it five times and get an average, increment it to 
+20000, sort it five times again, then repeat until it reached 100,000 
+(after 10 tests). This was a good amount of data to plot the points 
+(time vs. input) and find a pattern. 
+
+B.
+  1:   10000 words in      16 milliseconds
+  2:   20000 words in      28 milliseconds
+  3:   30000 words in      59 milliseconds
+  4:   40000 words in     108 milliseconds
+  5:   50000 words in     156 milliseconds
+  6:   60000 words in     221 milliseconds
+  7:   70000 words in     306 milliseconds
+  8:   80000 words in     374 milliseconds
+  9:   90000 words in     483 milliseconds
+ 10:  100000 words in     555 milliseconds
+
+C. Complexity: O(nlogn)
+   I had to use a larger input for this algorithm because it was more
+   efficient than bubble sort even though usually both bubble and 
+   insertion would have a complexity of O(n^2). Since this was a modified
+   insertion sort, the faster than usual runtime makes sense.
+
+III. Merge
+
+A. Test parameters: java SortTimer random-strings.txt 2 20000 20000 10 4
+   It sorts the first 20000 strings, extends each test by 20000, does 10
+   tests, and 4 reps/iteration. I chose this because it would start at
+   20000 strings, sort it four times and get an average, increment it to 
+   40000, sort it four times again, then repeat until it reached 199,999 
+   (after 10 tests). This was a good amount of data to plot the points 
+   (time vs. input) and find a pattern. 
+
+B.
+  1:   20000 words in      32 milliseconds
+  2:   40000 words in      34 milliseconds
+  3:   60000 words in      60 milliseconds
+  4:   80000 words in      96 milliseconds
+  5:  100000 words in     113 milliseconds
+  6:  120000 words in     121 milliseconds
+  7:  140000 words in     142 milliseconds
+  8:  160000 words in     151 milliseconds
+  9:  180000 words in     183 milliseconds
+ 10:  199999 words in     213 milliseconds
+
+C. Complexity: O(nlogn)
+    I had to use an even larger input to run this algorithm because itâ€™s
+    faster than bubble and insertion sort. But that makes sense since
+    merge sortâ€™s complexity is usually O(nlogn) anyway.
+
+A. Test parameters:
+
+IV. Quick
+
+A. Test parameters: java SortTimer random-strings.txt 3 20000 20000 10 10
+   It sorts the first 20000 strings, extends each test by 20000, does 10
+   tests, and 10 reps/iteration. I chose this because it would start at
+   20000 strings, sort it ten times and get an average, increment it to 
+   40000, sort it ten times again, then repeat until it reached 199,999 
+   (after 10 tests). This was a good amount of data to plot the points 
+   (time vs. input) and find a pattern.
+
+B.
+  1:   20000 words in      20 milliseconds
+  2:   40000 words in      24 milliseconds
+  3:   60000 words in      44 milliseconds
+  4:   80000 words in      88 milliseconds
+  5:  100000 words in      70 milliseconds
+  6:  120000 words in      82 milliseconds
+  7:  140000 words in     110 milliseconds
+  8:  160000 words in     117 milliseconds
+  9:  180000 words in     138 milliseconds
+ 10:  199999 words in     147 milliseconds
+
+C. Complexity: O(nlogn)
+   This was one of the faster algorithms, so I had to use very high inputs
+   to find the runtime patterns. I could perform more reps/iteration to
+   get a more accurate average value since each rep did not take too much
+   time.
+
+Part 2 (random-strings-sorted.txt)
+
+I. Bubble
+
+A. Test parameters: java SortTimer random-strings-sorted.txt 0 5000 20000 10 2
+   It sorts the first 5000 strings, extends each test by 20000, does 10
+   tests, and 2 reps/iteration. I chose this because it would start at
+   5000 strings, sort it twice and get an average, increment it to 25000, sort it twice   
+   again, then repeat until it reached 185,000 (after 10 tests). This was a good
+   amount of data to plot the points (time vs. input) and find a pattern.
+
+B.
+  1:    5000 words in       2 milliseconds
+  2:   25000 words in       3 milliseconds
+  3:   45000 words in       1 milliseconds
+  4:   65000 words in       2 milliseconds
+  5:   85000 words in       2 milliseconds
+  6:  105000 words in       5 milliseconds
+  7:  125000 words in       4 milliseconds
+  8:  145000 words in       8 milliseconds
+  9:  165000 words in       7 milliseconds
+ 10:  185000 words in       7 milliseconds
+
+C. Complexity: O(n)
+   This is the best case scenario for bubble sort. When the points are plotted, 
+   it is apparent that it grows linearly as the time gets gradually higher (ex:
+   3 ms at 25000 word input and 5 ms at 105,000 word input.
+
+II. Insertion
+
+A. Test parameters: java SortTimer random-strings-sorted.txt 1 5000 10000 20 2
+   It sorts the first 5000 strings, extends each test by 20000, does 20
+   tests, and 2 reps/iteration. I chose this because it would start at
+   5000 strings, sort it twice and get an average, increment it to 15000, sort it twice   
+   again, then repeat until it reached 195,000 (after 20 tests). This was a good
+   amount of data to plot the points (time vs. input) and find a pattern.
+
+B.
+  1:    5000 words in       3 milliseconds
+  2:   15000 words in       4 milliseconds
+  3:   25000 words in       3 milliseconds
+  4:   35000 words in       2 milliseconds
+  5:   45000 words in       2 milliseconds
+  6:   55000 words in       3 milliseconds
+  7:   65000 words in       5 milliseconds
+  8:   75000 words in       6 milliseconds
+  9:   85000 words in       5 milliseconds
+ 10:   95000 words in       7 milliseconds
+ 11:  105000 words in       7 milliseconds
+ 12:  115000 words in       6 milliseconds
+ 13:  125000 words in       7 milliseconds
+ 14:  135000 words in      11 milliseconds
+ 15:  145000 words in       8 milliseconds
+ 16:  155000 words in       7 milliseconds
+ 17:  165000 words in       9 milliseconds
+ 18:  175000 words in      12 milliseconds
+ 19:  185000 words in      11 milliseconds
+ 20:  195000 words in      10 milliseconds
+
+C. Complexity: O(n)
+   This is the best case scenario for this modified insertion sort. When the points are  
+   plotted, it is apparent that it grows linearly as the time gets gradually higher (ex:
+   4 ms at 15000 word input and 7 ms at 95,000 word input.
+
+
+III. Merge
+
+A. Test parameters: java SortTimer random-strings-sorted.txt 2 10000 10000 20 2
+   It sorts the first 10000 strings, extends each test by 10000, does 20
+   tests, and 2 reps/iteration. I chose this because it would start at
+   10000 strings, sort it twice and get an average, increment it to 20000, sort it twice   
+   again, then repeat until it reached 199,999 (after 20 tests). This was a good
+   amount of data to plot the points (time vs. input) and find a pattern.
+
+
+B.
+  1:   10000 words in      17 milliseconds
+  2:   20000 words in      17 milliseconds
+  3:   30000 words in      17 milliseconds
+  4:   40000 words in      16 milliseconds
+  5:   50000 words in      41 milliseconds
+  6:   60000 words in      47 milliseconds
+  7:   70000 words in      47 milliseconds
+  8:   80000 words in      45 milliseconds
+  9:   90000 words in      41 milliseconds
+ 10:  100000 words in      48 milliseconds
+ 11:  110000 words in      40 milliseconds
+ 12:  120000 words in      68 milliseconds
+ 13:  130000 words in      61 milliseconds
+ 14:  140000 words in      66 milliseconds
+ 15:  150000 words in      73 milliseconds
+ 16:  160000 words in      72 milliseconds
+ 17:  170000 words in      70 milliseconds
+ 18:  180000 words in      85 milliseconds
+ 19:  190000 words in      85 milliseconds
+ 20:  199999 words in      91 milliseconds
+
+C. Complexity: O(nlogn)
+   This is the best case scenario for merge sort. When the points are  
+   plotted, it is apparent that it grows similarly to as it did when the
+   strings arenâ€™t sorted above. Since it divides, compares, and merges
+   back together no matter if itâ€™s sorted or not, it doesnâ€™t matter what
+   the best or worst case is because they would be roughly the same.
+
+IV. Quick
+
+A. Test parameters: java SortTimer random-strings-sorted.txt 3 1000 1000 10 3
+   It sorts the first 1000 strings, extends each test by 1000, does 10
+   tests, and 3 reps/iteration. I chose this because it would start at
+   1000 strings, sort it three times and get an average, increment it to 2000, 
+   sort it twice again, then repeat until it reached 10,000 (after 10 tests). 
+   This was a good amount of data to plot the points (time vs. input) and find
+   a pattern.
+
+B. 
+  1:    1000 words in      17 milliseconds
+  2:    2000 words in      27 milliseconds
+  3:    3000 words in      56 milliseconds
+  4:    4000 words in     100 milliseconds
+  5:    5000 words in     132 milliseconds
+  6:    6000 words in     168 milliseconds
+  7:    7000 words in     206 milliseconds
+  8:    8000 words in     330 milliseconds
+  9:    9000 words in     349 milliseconds
+ 10:   10000 words in     528 milliseconds
+
+C. Complexity: O(n^2)
+   The worst case for quick sort is when the data is already sorted, hence the 
+   slow complexity.
+
+Part 3
+
+1. The method binsearch looks through the ArrayList to find where to insert the
+   target. It checks if the target element is greater than or equal to the element at the            
+   largest index, then checks if itâ€™s less than or equal to the element at the smallest    
+   index. It splits the array in half every time, checks the middle element in each section,   
+   compares it to the target element, and searches in the section that will get it closer to 
+   the target element. 
+
+2. The space complexity of insertion sort is traditionally O(1).
